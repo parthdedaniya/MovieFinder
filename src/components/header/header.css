@@ -34,3 +34,99 @@ a > span:hover {
 .user__avatar {
     font-size: 2rem;
 }
+
+
+/*  */
+
+/* .searchArea{
+    display: flex;
+    flex-direction: column;
+} */
+
+.headerSearch {
+    padding-left: 10px;
+    /* background-color: white; */
+    display: flex;
+    border-radius: 5px;
+}
+
+/* .headerSearchBtn {
+    padding-right: 10px;
+} */
+
+.headerSearchInput {
+    width: 260px;
+    background-color: white;
+    padding: 5px;
+    border: none;
+    outline: none;
+}
+
+.headerButton {
+    margin-left: 5px;
+}
+
+.searchedMoviesList {
+    width: 260px;
+    background-color: white;
+    color: black;
+    padding: 0;
+    /* display: flex; */
+    display: none;
+    flex-direction: column;
+    /* position: relative;
+    top: 30px;
+    right: 200px; */
+    position: absolute;
+    margin-left: 10px;
+    z-index: 1;
+    /* bottom: 24px; */
+    /* box-shadow: 0px 1px 1px black; */
+    /* border-radius: 5px; */
+    /* border-top-left-radius: 0; */
+    /* border-top-right-radius: 0; */
+    /* margin: 0 auto; */
+}
+
+.searchedMoviesList:active {
+    display: flex;
+}
+
+.searchedMoviesList:empty {
+    box-shadow: none;
+}
+
+/* .headerSearch:focus-within {
+    border-bottom-left-radius: 0;
+    border-bottom-right-radius: 0;
+}
+*/
+
+.headerSearch:focus-within+.searchedMoviesList {
+    display: flex;
+} 
+
+.searchedMoviesListOuter {
+    list-style-type: none;
+    border-bottom: 1px solid black;
+    margin: 2px 0 0;
+}
+
+.searchedMovies {
+    /* display: flex; */
+    /* align-items: center; */
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.searchedMovieImg {
+    width: 30px;
+    padding: 5px;
+    margin-right: 10px;
+}
+
+.searchedMovieName {
+    color: black;
+    font-size: 14px;
+    margin: 5px;
+}
