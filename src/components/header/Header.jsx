@@ -1,6 +1,6 @@
 import React, { useState } from "react"
 import "./header.css"
-import { Link } from "react-router-dom"
+import { Link, Navigate } from "react-router-dom"
 
 const Header = () => {
     const [searchedMovies, setSearchedMovies] = useState([]);
@@ -21,26 +21,15 @@ const Header = () => {
         }
     }
 
-    const searchReset = ()=>{
-        setSearchMovieName("");
-        setSearchedMovies([]);
-    }
+    // const searchReset = (e)=>{
+    //     setSearchMovieName("");
+    //     setSearchedMovies([]);
+    // }
     return (
-        // <div className="header">
-        //     <div className="headerLeft">
-        //         <Link to="/" style={{textDecoration: "none"}}>
-        //             {/* <img className="header__icon" src="https://upload.wikimedia.org/wikipedia/commons/thumb/6/69/IMDB_Logo_2016.svg/2560px-IMDB_Logo_2016.svg.png" /> */}
-        //             <span className="logoname">MOVIEFINDER</span>
-        //         </Link>
-        //         <Link to="/movies/popular" style={{textDecoration: "none"}}><span>Popular</span></Link>
-        //         <Link to="/movies/top_rated" style={{textDecoration: "none"}}><span>Top Rated</span></Link>
-        //         <Link to="/movies/upcoming" style={{textDecoration: "none"}}><span>Upcoming</span></Link>
-        //     </div>
-        // </div>
 
         <nav className="navbar navbar-expand-lg">
             <div className="container-fluid">
-                <Link className="navbar-brand logoname" to="/"><span className="logoname">MOVIEFINDER</span></Link>
+                <Link className="navbar-brand logoname" to="/"><span className="logoname">MOVIEBUZZ</span></Link>
                 <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                     <span className="navbar-toggler-icon"></span>
                 </button>
@@ -60,16 +49,13 @@ const Header = () => {
                         <div className="headerSearch">
                             <div className="headerRight">
                                 <input className="headerSearchInput" value={searchMovieName} type="text" placeholder="Search" onChange={(e)=>suggestMovie(e)}/>
-                                <div className="headerSearchBtn">
-                                    <button className="btn btn-outline-danger headerButton" type="submit">Search</button>
-                                </div>
                             </div>
                         </div>
                         <ul className="searchedMoviesList">
                             {(searchedMovies.length > 0 && searchedMovies.map((movie) => {
                                 return (
                                     <li className="searchedMoviesListOuter">
-                                        <Link className="searchedMovies" to={`/movie/${movie.id}`} onClick={searchReset}>
+                                        <Link className="searchedMovies" to={`/movie/${movie.id}`}>
                                             {/* <img className="searchedMovieImg" src={`https://image.tmdb.org/t/p/original${movie?movie.poster_path:""}`} alt="qwerty" /> */}
                                             <span className="searchedMovieName">{movie.title}</span>
                                         </Link>

@@ -24,6 +24,7 @@ const Home = () => {
                     transitionTime={3}
                     infiniteLoop={true}
                     showStatus={false}
+                    showIndicators={false}
                 >
                     {
                         popularMovies.map(movie => (

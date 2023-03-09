@@ -57,9 +57,10 @@ a > span:hover {
 .headerSearchInput {
     width: 260px;
     background-color: white;
-    padding: 5px;
+    padding: 5px 10px;
     border: none;
     outline: none;
+    border-radius: 5px;
 }
 
 .headerButton {
@@ -96,11 +97,10 @@ a > span:hover {
     box-shadow: none;
 }
 
-/* .headerSearch:focus-within {
+.headerSearchInput:focus{
     border-bottom-left-radius: 0;
     border-bottom-right-radius: 0;
 }
-*/
 
 .headerSearch:focus-within+.searchedMoviesList {
     display: flex;

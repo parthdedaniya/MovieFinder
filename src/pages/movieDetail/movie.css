@@ -12,7 +12,7 @@
 
 .movie__backdrop {
     width: 100%;
-    height: 500px;
+    height: 400px;
     object-fit:cover;
     object-position: 0 35%;
 }
@@ -58,7 +58,7 @@
 }
 
 .movie__genres {
-    margin: 1.25rem 0;
+    margin: 2rem 0;
 }
 
 .movie__genre {
@@ -90,7 +90,6 @@
     position: relative;
     bottom: 120px;
     display: flex;
-    justify-content: space-between;
     width: 75%;
 }
 
@@ -103,6 +102,7 @@
     justify-content: center;
     align-items: center;
     padding: 0.8rem 2rem;
+    margin: 0 1rem;
     border-radius: 20px;
     cursor: pointer;
     width: 150px;
@@ -110,36 +110,42 @@
     font-weight: bold;
 }
 
-.movie__homeButton {
-    background-color:rgb(255, 0, 0);
-    
+.movie__homeButton,.movie__imdbButton {
+    color: greenyellow;
+    border: 2px solid greenyellow;  
+}
+.movie__homeButton:hover,.movie__imdbButton:hover{
+    background-color: greenyellow;
+    color: black;
 }
 
-.movie__imdbButton {
-    background-color:#f3ce13;
-}
 
 .newTab {
     margin-left: 1.4rem;
 }
 
-.movie__production {
+.movie__production, .movie__actors, .movie__recommendations {
     width: 85%;
     display: flex;
+    flex-wrap: wrap;
     justify-content: center;
     align-items: flex-end;
     margin-bottom: 4rem;
 }
 
 
-.movie__productionComapany {
+.movie__productionComapany, .movie__actor, .movie__recommendation {
     width: 200px;
     margin: 2rem;
 }
 
-.productionCompanyImage {
+.productionCompanyImage, .actorImage, .recommendationImage {
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
+}
+
+.movie__actors{
+
 }
