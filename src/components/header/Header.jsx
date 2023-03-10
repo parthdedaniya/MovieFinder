@@ -1,6 +1,6 @@
 import React, { useState } from "react"
 import "./header.css"
-import { Link, Navigate } from "react-router-dom"
+import {    Link, Navigate } from "react-router-dom"
 
 const Header = () => {
     const [searchedMovies, setSearchedMovies] = useState([]);
@@ -21,10 +21,10 @@ const Header = () => {
         }
     }
 
-    // const searchReset = (e)=>{
-    //     setSearchMovieName("");
-    //     setSearchedMovies([]);
-    // }
+    const searchReset = ()=>{
+        setSearchMovieName("");
+        setSearchedMovies([]);
+    }
     return (
 
         <nav className="navbar navbar-expand-lg">
@@ -33,7 +33,7 @@ const Header = () => {
                 <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                     <span className="navbar-toggler-icon"></span>
                 </button>
-                <div className="collapse navbar-collapse headerLeft" id="navbarSupportedContent">
+                <div className="collapse navbar-collapse" id="navbarSupportedContent">
                     <ul className="navbar-nav me-auto mb-2 mb-lg-0">
                         <li className="nav-item">
                             <Link to="/movies/popular" style={{textDecoration: "none"}}><span>Popular</span></Link>
@@ -47,15 +47,15 @@ const Header = () => {
                     </ul>
                     <div className="searchArea">
                         <div className="headerSearch">
-                            <div className="headerRight">
-                                <input className="headerSearchInput" value={searchMovieName} type="text" placeholder="Search" onChange={(e)=>suggestMovie(e)}/>
+                            <div className="d-flex">
+                                <input className="form-control me-2 headerSearchInput" value={searchMovieName} type="text" placeholder="Search" onChange={(e)=>suggestMovie(e)}/>
                             </div>
                         </div>
                         <ul className="searchedMoviesList">
                             {(searchedMovies.length > 0 && searchedMovies.map((movie) => {
                                 return (
                                     <li className="searchedMoviesListOuter">
-                                        <Link className="searchedMovies" to={`/movie/${movie.id}`}>
+                                        <Link className="searchedMovies" to={`/movie/${movie.id}`} onClick={searchReset}>
                                             {/* <img className="searchedMovieImg" src={`https://image.tmdb.org/t/p/original${movie?movie.poster_path:""}`} alt="qwerty" /> */}
                                             <span className="searchedMovieName">{movie.title}</span>
                                         </Link>

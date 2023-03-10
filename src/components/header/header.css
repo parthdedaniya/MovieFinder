@@ -44,10 +44,7 @@ a > span:hover {
 } */
 
 .headerSearch {
-    padding-left: 10px;
-    /* background-color: white; */
-    display: flex;
-    border-radius: 5px;
+    /* padding-left: 10px; */
 }
 
 /* .headerSearchBtn {
@@ -55,9 +52,9 @@ a > span:hover {
 } */
 
 .headerSearchInput {
-    width: 260px;
+    /* width: 260px; */
     background-color: white;
-    padding: 5px 10px;
+    /* padding: 5px 10px; */
     border: none;
     outline: none;
     border-radius: 5px;
@@ -68,25 +65,18 @@ a > span:hover {
 }
 
 .searchedMoviesList {
-    width: 260px;
+    width: 218px;
     background-color: white;
     color: black;
     padding: 0;
-    /* display: flex; */
     display: none;
     flex-direction: column;
-    /* position: relative;
-    top: 30px;
-    right: 200px; */
+    position: relative;
+    top: 46px;
+    right: 20px;
     position: absolute;
     margin-left: 10px;
     z-index: 1;
-    /* bottom: 24px; */
-    /* box-shadow: 0px 1px 1px black; */
-    /* border-radius: 5px; */
-    /* border-top-left-radius: 0; */
-    /* border-top-right-radius: 0; */
-    /* margin: 0 auto; */
 }
 
 .searchedMoviesList:active {
@@ -129,4 +119,15 @@ a > span:hover {
     color: black;
     font-size: 14px;
     margin: 5px;
+}
+
+@media (max-width: 992px) {
+    .headerSearchInput{
+        width: 218px;
+        
+    }
+    .searchedMoviesList{
+        top: 187px;
+        left: 2px;
+    }
 }

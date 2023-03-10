@@ -22,7 +22,7 @@
     width: 75%;
     display: flex;
     position: relative;
-    bottom: 225px;
+    bottom: 275px;
 }
 
 .movie__detailLeft {
@@ -148,4 +148,47 @@
 
 .movie__actors{
 
+}
+
+
+@media(max-width: 992px){
+    .movie__backdrop {
+        height: auto;
+    }
+    .movie__detail {
+        bottom: 175px;
+    }
+    .movie__detailLeft {
+        margin-right: 20px;
+    }
+    .movie__poster {
+        width:100%;
+    }
+    .movie__detailRight {
+        height: 450px;
+    }
+    .movie__detailRightTop > div{
+        margin-bottom: 0;
+    }
+    .movie__name {
+        font-size: 2rem;
+    }
+    .movie__genres {
+        margin: 1rem 0;
+    }
+    .movie__genre {
+        padding: .25rem;
+        margin-right: .5rem;
+    }
+    .movie__detailRightBottom {
+        margin: 1rem 0;
+    }
+    .synopsisText {
+        font-size: 1.5rem;
+        margin-bottom: 1rem;
+        font-weight: 600;
+        display: flex;
+        position: relative;
+        align-items: center;
+    }
 }

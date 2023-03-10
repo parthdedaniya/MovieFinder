@@ -3,34 +3,36 @@ import "./movie.css"
 import { Link,useParams } from "react-router-dom"
 
 const Movie = () => {
+    const [loading, setLoading]=useState(false)
     const [currentMovieDetail, setMovie] = useState()
     const [actors,setActors]=useState()
     const [recommendations,setRecommendations] = useState()
     const { id } = useParams()
 
     useEffect(() => {
-        getData()
-        getActors()
-        getRecommendations()
+        setLoading(true)
+        console.log("www");
+        getData(id)
+        getActors(id)
+        getRecommendations(id)
+        setLoading(false)
         window.scrollTo(0,0)
-    }, [])
+    }, [id])
 
-    const getData = () => {
-        fetch(`https://api.themoviedb.org/3/movie/${id}?api_key=7b53acebe78916de0ee5905de952d3c4&language=en-US`)
-        .then(res => res.json())
-        .then(data => setMovie(data))
+    const getData = (id) => {
+        fetch(`https://api.themoviedb.org/3/movie/${id}?api_key=7b53acebe78916de0ee5905de952d3c4&language=en-US`).then(res => res.json()).then(data => setMovie(data))
     }
 
-    const getActors=()=>{
+    const getActors=(id)=>{
         fetch(`http://api.themoviedb.org/3/movie/${id}/casts?api_key=7b53acebe78916de0ee5905de952d3c4`).then(res => res.json()).then(data => setActors(data))
     }
 
-    const getRecommendations=()=>{
+    const getRecommendations=(id)=>{
         fetch(`https://api.themoviedb.org/3/movie/${id}/recommendations?api_key=7b53acebe78916de0ee5905de952d3c4&language=en-US&page=1`).then(res => res.json()).then(data => setRecommendations(data))
     }
 
     return (
-        <div className="movie">
+        !loading && <div className="movie">
             <div className="movie__intro">
                 <img className="movie__backdrop" src={`https://image.tmdb.org/t/p/original${currentMovieDetail ? currentMovieDetail.backdrop_path : ""}`} />
             </div>
@@ -45,7 +47,7 @@ const Movie = () => {
                         <div className="movie__name">{currentMovieDetail ? currentMovieDetail.original_title : ""}</div>
                         <div className="movie__tagline">{currentMovieDetail ? currentMovieDetail.tagline : ""}</div>
                         <div className="movie__rating">
-                            {currentMovieDetail ? currentMovieDetail.vote_average: ""} <i class="fas fa-star" />
+                            {currentMovieDetail ? currentMovieDetail.vote_average: ""} <i className="fas fa-star" />
                             <span className="movie__voteCount">{currentMovieDetail ? "(" + currentMovieDetail.vote_count + ") votes" : ""}</span>
                         </div>  
                         <div className="movie__runtime">{currentMovieDetail ? currentMovieDetail.runtime + " mins" : ""}</div>
@@ -111,7 +113,8 @@ const Movie = () => {
                     ))
                 }
             </div>
-            <div className="movie__heading">Recommendations</div>
+
+            {recommendations && recommendations.results && recommendations.results.length > 0 && <div className="movie__heading">Recommendations</div>}
             <div className="movie__recommendations">
                 {
                      recommendations && recommendations.results && recommendations.results.length > 0 && recommendations.results.map(movie=>(

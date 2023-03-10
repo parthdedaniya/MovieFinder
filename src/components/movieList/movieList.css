@@ -1,5 +1,5 @@
 .movie__list {
-    padding: 0 3rem 3rem 3rem;
+    padding: 0 2rem 2rem 2rem;
 }
 
 .list__title {
@@ -10,5 +10,6 @@ margin:  2.5rem;
 .list__cards {
     display: flex;
     flex-wrap: wrap ;
+    gap: 15px;
     justify-content: center;
 }
