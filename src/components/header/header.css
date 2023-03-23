@@ -1,48 +1,49 @@
 .header {
-    margin: 0 2.5rem;
-    padding: .5rem 0;
-    align-items: center;
-    display: flex;
-    justify-content:space-between;
+	margin: 0 2.5rem;
+	padding: 0.5rem 0;
+	align-items: center;
+	display: flex;
+	justify-content: space-between;
 }
 
-.headerLeft, .headerRight {
-    display: flex;
-    align-items: center;
+.headerLeft,
+.headerRight {
+	display: flex;
+	align-items: center;
 }
 
-.logoname{
-    color: white;
+.logoname {
+	color: white;
 }
 
-a > span{
-    margin: 0 30px;
-    font-size: 1.3rem;
-    cursor: pointer;
-    color: white;
+a > span {
+	margin: 0 30px;
+	font-size: 1.3rem;
+	cursor: pointer;
+	color: white;
 }
 
 a > span:hover {
-    color: red;
+	color: red;
 }
 
 .header__icon {
-    width: 80px;
-    cursor: pointer;
+	width: 80px;
+	cursor: pointer;
 }
 
 .user__avatar {
-    font-size: 2rem;
+	font-size: 2rem;
 }
 
-.profileIcon{
-    color: white;
-    font-size: 20px;
-    margin: 9px 20px 0;
-    cursor: pointer;
+.profileIcon {
+	color: white;
+	font-size: 20px;
+	margin: 9px 20px 0;
+	cursor: pointer;
 }
-.profileIcon:hover{
-    color: red;
+.profileIcon:hover {
+	color: red;
 }
 
 /*  */
@@ -53,7 +54,7 @@ a > span:hover {
 } */
 
 .headerSearch {
-    /* padding-left: 10px; */
+	/* padding-left: 10px; */
 }
 
 /* .headerSearchBtn {
@@ -61,82 +62,81 @@ a > span:hover {
 } */
 
 .headerSearchInput {
-    /* width: 260px; */
-    background-color: white;
-    /* padding: 5px 10px; */
-    border: none;
-    outline: none;
-    border-radius: 5px;
+	/* width: 260px; */
+	background-color: white;
+	/* padding: 5px 10px; */
+	border: none;
+	outline: none;
+	border-radius: 5px;
 }
 
 .headerButton {
-    margin-left: 5px;
+	margin-left: 5px;
 }
 
 .searchedMoviesList {
-    width: 218px;
-    background-color: white;
-    color: black;
-    padding: 0;
-    display: none;
-    flex-direction: column;
-    position: relative;
-    top: 46px;
-    right: 20px;
-    position: absolute;
-    margin-left: 10px;
-    z-index: 1;
+	width: 255px;
+	background-color: white;
+	color: black;
+	padding: 0;
+	display: none;
+	flex-direction: column;
+	position: relative;
+	top: 46px;
+	right: 20px;
+	position: absolute;
+	margin-left: 10px;
+	z-index: 1;
 }
 
 .searchedMoviesList:active {
-    display: flex;
+	display: flex;
 }
 
 .searchedMoviesList:empty {
-    box-shadow: none;
+	box-shadow: none;
 }
 
-.headerSearchInput:focus{
-    border-bottom-left-radius: 0;
-    border-bottom-right-radius: 0;
+.headerSearchInput:focus {
+	border-bottom-left-radius: 0;
+	border-bottom-right-radius: 0;
 }
 
-.headerSearch:focus-within+.searchedMoviesList {
-    display: flex;
-} 
+.headerSearch:focus-within + .searchedMoviesList {
+	display: flex;
+}
 
 .searchedMoviesListOuter {
-    list-style-type: none;
-    border-bottom: 1px solid black;
-    margin: 2px 0 0;
+	list-style-type: none;
+	border-bottom: 1px solid black;
+	margin: 2px 0 0;
 }
 
 .searchedMovies {
-    /* display: flex; */
-    /* align-items: center; */
-    text-decoration: none;
-    cursor: pointer;
+	/* display: flex; */
+	/* align-items: center; */
+	text-decoration: none;
+	cursor: pointer;
 }
 
 .searchedMovieImg {
-    width: 30px;
-    padding: 5px;
-    margin-right: 10px;
+	width: 30px;
+	padding: 5px;
+	margin-right: 10px;
 }
 
 .searchedMovieName {
-    color: black;
-    font-size: 14px;
-    margin: 5px;
+	color: black;
+	font-size: 14px;
+	margin: 5px;
 }
 
 @media (max-width: 992px) {
-    .headerSearchInput{
-        width: 218px;
-        
-    }
-    .searchedMoviesList{
-        top: 187px;
-        left: 2px;
-    }
+	.headerSearchInput {
+		width: 218px;
+	}
+	.searchedMoviesList {
+		top: 187px;
+		left: 2px;
+	}
 }
