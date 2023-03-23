@@ -9,9 +9,9 @@ const Login = () => {
 			<hr />
 			<form className="loginForm">
 				<label for="email">Email:</label>
-				<input type="text" id="email" v-model="email" />
+				<input type="text" id="email" />
 				<label for="password">Password:</label>
-				<input type="password" id="password" v-model="password" />
+				<input type="password" id="password" />
 				<button type="submit" className="submitForm">
 					Login
 				</button>
