@@ -34,7 +34,10 @@
     border-radius: 10px;
     box-shadow: rgba(0, 0, 0, 0.86) 0px 22px 40px 6px;
 }
-
+.production{
+    background-color: white;
+    color: black;
+}
 .movie__detailRight {
     color: white;
     display: flex;
@@ -57,8 +60,9 @@
     margin-left: 1rem;
 }
 
-.movie__genres {
+.movie__genre {
     margin: 2rem 0;
+    text-decoration: none !important;
 }
 
 .movie__genre {
@@ -137,6 +141,11 @@
 .movie__productionComapany, .movie__actor, .movie__recommendation {
     width: 200px;
     margin: 2rem;
+    background-color: white;
+}
+.movie__watchlist:hover{
+    cursor: pointer;
+    color: red;
 }
 
 .productionCompanyImage, .actorImage, .recommendationImage {

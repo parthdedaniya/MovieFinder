@@ -48,6 +48,9 @@ const Header = () => {
                     <div className="searchArea">
                         <div className="headerSearch">
                             <div className="d-flex">
+                                <Link to="/profile">
+                                <i class="fa-solid fa-user profileIcon"></i>
+                                </Link>
                                 <input className="form-control me-2 headerSearchInput" value={searchMovieName} type="text" placeholder="Search" onChange={(e)=>suggestMovie(e)}/>
                             </div>
                         </div>

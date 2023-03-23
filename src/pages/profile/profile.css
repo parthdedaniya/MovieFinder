@@ -1,0 +1,30 @@
+.userDetails{
+    display: flex;
+    max-width: 1200px;
+    margin: 10px auto;
+    align-items: center;
+    font-size: 30px;
+    /* padding: 20px 30px; */
+}
+.userimage{
+    width: 40%;
+}
+.userimage{
+    font-size: 200px;
+    text-align: center;
+}
+.tableLabel{
+    text-align: right;
+}
+.uservalue{
+    margin-left: 10px;
+}
+td{
+    padding: 10px 20px;
+}
+.watchtitle{
+    padding: 2rem 3rem 0;
+    font-weight: 500;
+    font-size: 1.75rem;
+    margin: 2.5rem;
+}

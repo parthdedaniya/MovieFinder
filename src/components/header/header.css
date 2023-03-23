@@ -35,6 +35,15 @@ a > span:hover {
     font-size: 2rem;
 }
 
+.profileIcon{
+    color: white;
+    font-size: 20px;
+    margin: 9px 20px 0;
+    cursor: pointer;
+}
+.profileIcon:hover{
+    color: red;
+}
 
 /*  */
 

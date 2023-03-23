@@ -46,6 +46,7 @@ const Movie = () => {
                     <div className="movie__detailRightTop">
                         <div className="movie__name">{currentMovieDetail ? currentMovieDetail.original_title : ""}</div>
                         <div className="movie__tagline">{currentMovieDetail ? currentMovieDetail.tagline : ""}</div>
+                        <div className="movie__watchlist"><i class="fa-regular fa-heart"></i> Add To Watchlist</div>
                         <div className="movie__rating">
                             {currentMovieDetail ? currentMovieDetail.vote_average: ""} <i className="fas fa-star" />
                             <span className="movie__voteCount">{currentMovieDetail ? "(" + currentMovieDetail.vote_count + ") votes" : ""}</span>
@@ -57,7 +58,7 @@ const Movie = () => {
                                 currentMovieDetail && currentMovieDetail.genres
                                 ? 
                                 currentMovieDetail.genres.map(genre => (
-                                    <><span className="movie__genre" id={genre.id}>{genre.name}</span></>
+                                    <Link to={`/movies-genre/${genre.id}`} className="movie__genre"><span  id={genre.id}>{genre.name}</span></Link>
                                 )) 
                                 : 
                                 ""
@@ -97,6 +98,7 @@ const Movie = () => {
                 }
             </div>
             <div className="movie__heading">Production companies</div>
+            {/* <div className="production"> */}
             <div className="movie__production">
                 {
                     currentMovieDetail && currentMovieDetail.production_companies && currentMovieDetail.production_companies.map(company => (
@@ -113,6 +115,7 @@ const Movie = () => {
                     ))
                 }
             </div>
+            {/* </div> */}
 
             {recommendations && recommendations.results && recommendations.results.length > 0 && <div className="movie__heading">Recommendations</div>}
             <div className="movie__recommendations">
