@@ -5,6 +5,8 @@ import Home from './pages/home/Home';
 import MovieList from './components/movieList/MovieList';
 import Movie from './pages/movieDetail/Movie';
 import Profile from './pages/profile/Profile';
+import Login from './pages/login/Login';
+import Register from './pages/register/Register';
 
 function App() {
   return (
@@ -12,7 +14,9 @@ function App() {
         <Router>
           <Header />
             <Routes>
-                <Route index element={<Home />}></Route>
+          <Route index element={<Home />}></Route>
+          <Route path="login" element={<Login />}></Route>
+          <Route path="register" element={<Register />}></Route>
                 <Route path="movie/:id" element={<Movie />}></Route>
                 <Route path="movies/:type" element={<MovieList />}></Route>
                 <Route path="profile" element={<Profile />}></Route>
